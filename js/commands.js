@@ -62,6 +62,84 @@ customCommands.hello = {
 };
 
 /**
+ * Print certain system information.
+ **/
+customCommands.uname = {
+    about: "Usage: uname [OPTION]...<br>Print certain system information.  With no OPTION, same as -s.<br><br>&nbsp;&nbsp;-a (all)<br>&nbsp;&nbsp;-s (kernel-name)<br>&nbsp;&nbsp;-n (nodename)<br>&nbsp;&nbsp;-r (kernel-release)<br>&nbsp;&nbsp;-v (kernel-version)<br>&nbsp;&nbsp;-m (machine)<br>&nbsp;&nbsp;-p (processor)<br>&nbsp;&nbsp;-i (hardware-platform)<br>&nbsp;&nbsp;-o (operating-system)<br>&nbsp;&nbsp;&nbsp;&nbsp;--help<br>&nbsp;&nbsp;&nbsp;&nbsp;--version",
+    exe: function (args) {
+        var information = "";
+        if ( args[1] && args[1] == "-a") {
+            information += "Linux arch 6.1.9-arch1-2 #1 SMP PREEMPT_DYNAMIC Fri, 03 Feb 2023 18:49:53 +0000<br>x86_64 GNU/Linux";
+        } else if ( args[1] && args[1] == "-s" ) {
+            information += "Linux";
+        } else if ( args[1] && args[1] == "-n" ) {
+            information += "arch";
+        } else if ( args[1] && args[1] == "-r" ) {
+            information += "6.1.9-arch1-2";
+        } else if ( args[1] && args[1] == "-v" ) {
+            information += "#1 SMP PREEMPT_DYNAMIC Fri, 03 Feb 2023 18:49:53 +0000";
+        } else if ( args[1] && args[1] == "-m" ) {
+            information += "x86_64";
+        } else if ( args[1] && args[1] == "-p" ) {
+            information += "unknown";
+        } else if ( args[1] && args[1] == "-i" ) {
+            information += "unknown";
+        } else if ( args[1] && args[1] == "-o" ) {
+            information += "GNU/Linux";
+        } else if ( args[1] && args[1] == "--help" ) {
+            information += "Usage: uname [OPTION]...<br>Print certain system information.  With no OPTION, same as -s.<br><br>&nbsp;&nbsp;-a (all)<br>&nbsp;&nbsp;-s (kernel-name)<br>&nbsp;&nbsp;-n (nodename)<br>&nbsp;&nbsp;-r (kernel-release)<br>&nbsp;&nbsp;-v (kernel-version)<br>&nbsp;&nbsp;-m (machine)<br>&nbsp;&nbsp;-p (processor)<br>&nbsp;&nbsp;-i (hardware-platform)<br>&nbsp;&nbsp;-o (operating-system)<br>&nbsp;&nbsp;&nbsp;&nbsp;--help<br>&nbsp;&nbsp;&nbsp;&nbsp;--version";
+        } else if ( args[1] && args[1] == "--version" ) {
+            information += "uname (GNU coreutils) 9.1<br>Copyright (C) 2022 Free Software Foundation, Inc.<br>License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.<br>This is free software: you are free to change and redistribute it.<br>There is NO WARRANTY, to the extent permitted by law.<br><br>Written by David MacKenzie.";
+        } else if ( ! args[1] ) {
+            information += "Linux";
+        } else {
+            information += "uname: No such option.";
+        }
+        return information;
+    }
+}
+
+/**
+ * Fastboot
+ **/
+customCommands.fastboot = {
+    about: "usage: fastboot [OPTION...] COMMAND...",
+    exe: function (args) {
+        var information = "";
+        if ( args[1] && args[1] == "flash" ) {
+            if ( args[2] && args[2] == "boot" ) {
+                if ( args[3] && args[3] == "boot-offical.img" ) {
+                    information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]<br>Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]<br>Finished. Total time: 5.312s<br>Nothing happened.";
+                } else if ( args[3] && args[3] == "ksu-10581-Image-android12-5.10.81_2022-03-boot-gz.img" ) {
+                    information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]<br>Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]<br>Finished. Total time: 5.312s<br>Congratulations!!You have successfully completed this exam.<br>Telegram Group Password:114514";
+                } else if ( args[3] && args[3] == "ksu-10581-Image-android12-5.10.81_2022-03-boot-lz4.img" ) {
+                    information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]<br>Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]<br>Finished. Total time: 5.312s<br>Congratulations!!Your device has become a brick!<br>Please continue to finish exam.";
+                } else if ( args[3] && args[3] == "ksu-10581-Image-android12-5.10.81_2022-03-boot.img" ) {
+                    information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]<br>Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]<br>Finished. Total time: 5.312s<br>Congratulations!!Your device has become a brick!<br>Please continue to finish exam.";
+                } else if ( args[3] && args[3] == "ksu-10581-Image-android13-5.10.107_2022-05-boot.img" ) {
+                    information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]<br>Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]<br>Finished. Total time: 5.312s<br>Congratulations!!Your device has become a brick!<br>Please continue to finish exam.";
+                } else if ( ! args[3] ) {
+                    information += "fastboot: flash: Please choose a file which you need to flash.";
+                } else {
+                    information += "fastboot: error: No such file or directory.";
+                }
+            } else if ( ! args[2] ) {
+                information += "fastboot: flash: Please choose the partition which you need to flash.<br>(Just need to flash boot.)";
+            } else {
+                information += "fastboot: flash: Needn't flash this partition.";
+            }
+        } else if ( args[1] && args[1] == "devices" ) {
+            information += "a9d45561&nbsp;&nbsp;&nbsp;&nbsp;fastboot<br>&nbsp;";
+        } else if ( args[1] && args[1] == "-h" ) {
+            information += "usage: fastboot [OPTION...] COMMAND...<br><br>&nbsp;flash PARTITION [FILENAME]<br>&nbsp;devices<br>&nbsp;-h";
+        } else {
+            information += "fastboot: usage: no command";
+        } 
+        return information;
+    }
+}
+
+/**
  * Print a simple message.
  **/
 customCommands.secret = {

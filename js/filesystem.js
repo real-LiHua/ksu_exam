@@ -1,5 +1,17 @@
 var originalFilesystem="<d name='/' path='/'>\
             <c>\
+            <d name='bin' path='/bin/'>\
+                <c>\
+                </c>\
+            </d>\
+            <d name='boot' path='/boot/'>\
+                <c>\
+                </c>\
+            </d>\
+            <d name='dev' path='/dev/'>\
+                <c>\
+                </c>\
+            </d>\
             <d name='docs' path='/docs/'>\
                 <c>\
                     <d name='private' path='/docs/private/'>\
@@ -20,20 +32,112 @@ var originalFilesystem="<d name='/' path='/'>\
                     </f>\
                 </c>\
             </d>\
-            <d name='more' path='/more/'>\
+            <d name='etc' path='/etc/'>\
                 <c>\
-                    <f name='moretodo.txt' path='/more/'>\
-                        <contents>Don't forget this other stuff.</contents>\
-                    </f>\
+                </c>\
+            </d>\
+            <d name='home' path='/home/'>\
+                <c>\
+                    <d name='user' path='/home/user/'>\
+                        <c>\
+                           <d name='Android-Image-Kitchen' path='/home/user/Android-Image-Kitchen/'>\
+                               <c>\
+                                  <d name='.git' path='/home/user/Android-Image-Kitchen/.git/'>\
+                                  </d>\
+                                  <d name='bin' path='/home/user/Android-Image-Kitchen/bin/'>\
+                                      <c>\
+                                         <f name='androidbootimg.magic' path='/home/user/Android-Image-Kitchen/bin/'>\
+                                             <contents>https://github.com/osm0sis/Android-Image-Kitchen/blob/AIK-Linux/bin/androidbootimg.magic</contents>\
+                                         </f>\
+                                         <f name='magic' path='/home/user/Android-Image-Kitchen/bin/'>\
+                                             <contents>https://github.com/osm0sis/Android-Image-Kitchen/blob/AIK-Linux/bin/magic</contents>\
+                                         </f>\
+                                      </c>\
+                                  </d>\
+                                  <f name='authors.txt' path='/home/user/Android-Image-Kitchen/'>\
+                                      <contents>https://github.com/osm0sis/Android-Image-Kitchen/blob/AIK-Linux/authors.txt</contents>\
+                                  </f>\
+                                  <f name='cleanup.sh' path='/home/user/Android-Image-Kitchen/'>\
+                                      <contents>https://github.com/osm0sis/Android-Image-Kitchen/blob/AIK-Linux/cleanup.sh</contents>\
+                                  </f>\
+                                  <f name='repackimg.sh' path='/home/user/Android-Image-Kitchen/'>\
+                                      <contents>https://github.com/osm0sis/Android-Image-Kitchen/blob/AIK-Linux/repackimg.sh</contents>\
+                                  </f>\
+                                  <f name='unpackimg.sh' path='/home/user/Android-Image-Kitchen/'>\
+                                      <contents>https://github.com/osm0sis/Android-Image-Kitchen/blob/AIK-Linux/unpackimg.sh</contents>\
+                                  </f>\
+                               </c>\
+                           </d>\
+                           <d name='more' path='/home/user/more/'>\
+                               <c>\
+                                  <f name='moretodo.txt' path='/home/user/more/'>\
+                                      <contents>Don't forget this other stuff.</contents>\
+                                  </f>\
+                               </c>\
+                           </d>\
+                           <f name='cool.txt' path='/home/user/'>\
+                               <contents>There is a hidden command in this terminal called 'secret'.</contents>\
+                           </f>\
+                        </c>\
+                    </d>\
+                </c>\
+            </d>\
+            <d name='lib' path='/lib/'>\
+                <c>\
+                </c>\
+            </d>\
+            <d name='lib64' path='/lib64/'>\
+                <c>\
+                </c>\
+            </d>\
+            <d name='mnt' path='/mnt/'>\
+                <c>\
+                </c>\
+            </d>\
+            <d name='opt' path='/opt/'>\
+                <c>\
+                </c>\
+            </d>\
+            <d name='proc' path='/proc/'>\
+                <c>\
+                </c>\
+            </d>\
+            <d name='root' path='/root/'>\
+                <c>\
+                </c>\
+            </d>\
+            <d name='run' path='/run/'>\
+                <c>\
+                </c>\
+            </d>\
+            <d name='sbin' path='/sbin/'>\
+                <c>\
+                </c>\
+            </d>\
+            <d name='srv' path='/srv/'>\
+                <c>\
                 </c>\
             </d>\
             <d name='stuff' path='/stuff/'>\
                 <c>\
                 </c>\
             </d>\
-            <f name='cool.txt' path='/'>\
-                <contents>There is a hidden command in this terminal called 'secret'.</contents>\
-            </f>\
+            <d name='sys' path='/sys/'>\
+                <c>\
+                </c>\
+            </d>\
+            <d name='tmp' path='/tmp/'>\
+                <c>\
+                </c>\
+            </d>\
+            <d name='usr' path='/usr/'>\
+                <c>\
+                </c>\
+            </d>\
+            <d name='var' path='/var/'>\
+                <c>\
+                </c>\
+            </d>\
             </c>\
         </d>";
 /*
