@@ -140,6 +140,26 @@ customCommands.fastboot = {
 }
 
 /**
+ * whoami
+ **/
+customCommands.whoami = {
+    about: "Usage: whoami [OPTION]...<br>Print the user name associated with the current effective user ID.<br>Same as id -un.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display this help and exit<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output version information and exit<br><br>GNU coreutils online help: (https://www.gnu.org/software/coreutils/)<br>Report any translation bugs to (https://translationproject.org/team/)<br>Full documentation (https://www.gnu.org/software/coreutils/whoami)<br>or available locally via: info '(coreutils) whoami invocation'",
+    exe: function (args) {
+        var information = "";
+        if ( args[1] && args[1] == "--help" ) {
+            information += "Usage: whoami [OPTION]...<br>Print the user name associated with the current effective user ID.<br>Same as id -un.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display this help and exit<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output version information and exit<br><br>GNU coreutils online help: (https://www.gnu.org/software/coreutils/)<br>Report any translation bugs to (https://translationproject.org/team/)<br>Full documentation (https://www.gnu.org/software/coreutils/whoami)<br>or available locally via: info '(coreutils) whoami invocation'";
+        } else if ( args[1] && args[1] == "--version" ) {
+            information += "whoami (GNU coreutils) 9.1<br>Copyright (C) 2022 Free Software Foundation, Inc.<br>License GPLv3+: GNU GPL version 3 or later (https://gnu.org/licenses/gpl.html).<br>This is free software: you are free to change and redistribute it.<br>There is NO WARRANTY, to the extent permitted by law.<br><br>Written by Richard Mlynarik.";
+        } else if ( ! args[1] ) {
+            information += "root";
+        } else {
+            information += "whoami: No such options!"
+        }
+        return information;
+    }
+}
+
+/**
  * Print a simple message.
  **/
 customCommands.secret = {
