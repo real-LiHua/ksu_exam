@@ -40,31 +40,25 @@ var originalFilesystem="<d name='/' path='/'>\
                 <c>\
                     <d name='user' path='/home/user/'>\
                         <c>\
-                           <d name='Android-Image-Kitchen' path='/home/user/Android-Image-Kitchen/'>\
+                           <d name='workdir' path='/home/user/workdir/'>\
                                <c>\
-                                  <d name='.git' path='/home/user/Android-Image-Kitchen/.git/'>\
-                                  </d>\
-                                  <d name='bin' path='/home/user/Android-Image-Kitchen/bin/'>\
-                                      <c>\
-                                         <f name='androidbootimg.magic' path='/home/user/Android-Image-Kitchen/bin/'>\
-                                             <contents>https://github.com/osm0sis/Android-Image-Kitchen/blob/AIK-Linux/bin/androidbootimg.magic</contents>\
-                                         </f>\
-                                         <f name='magic' path='/home/user/Android-Image-Kitchen/bin/'>\
-                                             <contents>https://github.com/osm0sis/Android-Image-Kitchen/blob/AIK-Linux/bin/magic</contents>\
-                                         </f>\
-                                      </c>\
-                                  </d>\
-                                  <f name='authors.txt' path='/home/user/Android-Image-Kitchen/'>\
-                                      <contents>https://github.com/osm0sis/Android-Image-Kitchen/blob/AIK-Linux/authors.txt</contents>\
+                                  <f name='boot-offical.img' path='/home/user/workdir/'>\
+                                      <contents>This is the offical boot.img.</contents>\
                                   </f>\
-                                  <f name='cleanup.sh' path='/home/user/Android-Image-Kitchen/'>\
-                                      <contents>https://github.com/osm0sis/Android-Image-Kitchen/blob/AIK-Linux/cleanup.sh</contents>\
+                                  <f name='ksu-10581-Image-android12-5.10.81_2022-03-boot-gz.img' path='/home/user/workdir/'>\
+                                      <contents>https://github.com/tiann/KernelSU/releases</contents>\
                                   </f>\
-                                  <f name='repackimg.sh' path='/home/user/Android-Image-Kitchen/'>\
-                                      <contents>https://github.com/osm0sis/Android-Image-Kitchen/blob/AIK-Linux/repackimg.sh</contents>\
+                                  <f name='ksu-10581-Image-android12-5.10.81_2022-03-boot-lz4.img' path='/home/user/workdir/'>\
+                                      <contents>https://github.com/tiann/KernelSU/releases</contents>\
                                   </f>\
-                                  <f name='unpackimg.sh' path='/home/user/Android-Image-Kitchen/'>\
-                                      <contents>https://github.com/osm0sis/Android-Image-Kitchen/blob/AIK-Linux/unpackimg.sh</contents>\
+                                  <f name='ksu-10581-Image-android12-5.10.81_2022-03-boot.img' path='/home/user/workdir/'>\
+                                      <contents>https://github.com/tiann/KernelSU/releases</contents>\
+                                  </f>\
+                                  <f name='ksu-10581-Image-android13-5.10.107_2022-05-boot.img' path='/home/user/workdir/'>\
+                                      <contents>https://github.com/tiann/KernelSU/releases</contents>\
+                                  </f>\
+                                  <f name='magiskboot' path='/home/user/workdir/'>\
+                                      <contents>https://github.com/topjohnwu/Magisk/releases</contents>\
                                   </f>\
                                </c>\
                            </d>\

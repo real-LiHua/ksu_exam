@@ -140,6 +140,38 @@ customCommands.fastboot = {
 }
 
 /**
+ * magiskboot
+ **/
+customCommands.magiskboot = {
+    about: "usage: magiskboot [action] [args...]",
+    exe: function (args) {
+        var information = "";
+        if ( args[1] && args[1] == "unpack" ) {
+            if ( args[2] && args[2] == "boot-offical.img" ) {
+                information += "Parsing boot image: [boot-offical.img]<br>HEADER_VER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4]<br>KERNEL_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[15871933]<br>RAMDISK_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1380084]<br>OS_VERSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[12.0.0]<br>OS_PATCH_LEVEL&nbsp;&nbsp;[2022-03]<br>PAGESIZE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4096]<br>CMDLINE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]<br>KERNEL_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[gzip]<br>RAMDISK_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[lz4_legacy]<br>VBMETA";
+            } else if ( args[2] && args[2] == "ksu-10581-Image-android12-5.10.81_2022-03-boot-gz.img" ) {
+                information += "Parsing boot image: [ksu-10581-Image-android12-5.10.81_2022-03-boot-gz.img]<br>HEADER_VER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4]<br>KERNEL_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[15871933]<br>RAMDISK_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1380084]<br>OS_VERSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[12.0.0]<br>OS_PATCH_LEVEL&nbsp;&nbsp;[2022-03]<br>PAGESIZE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4096]<br>CMDLINE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]<br>KERNEL_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[gzip]<br>RAMDISK_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[lz4_legacy]<br>VBMETA";
+            } else if ( args[2] && args[2] == "ksu-10581-Image-android12-5.10.81_2022-03-boot-lz4.img" ) {
+                information += "Parsing boot image: [ksu-10581-Image-android12-5.10.81_2022-03-boot-lz4.img]<br>HEADER_VER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4]<br>KERNEL_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[18141752]<br>RAMDISK_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1380084]<br>OS_VERSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[12.0.0]<br>OS_PATCH_LEVEL&nbsp;&nbsp;[2022-03]<br>PAGESIZE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4096]<br>CMDLINE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]<br>KERNEL_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[lz4_lg]<br>RAMDISK_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[lz4_legacy]<br>VBMETA";
+            } else if ( args[2] && args[2] == "ksu-10581-Image-android12-5.10.81_2022-03-boot.img" ) {
+                information += "Parsing boot image: [ksu-10581-Image-android12-5.10.81_2022-03-boot.img]<br>HEADER_VER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4]<br>KERNEL_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[37331556]<br>RAMDISK_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1380084]<br>OS_VERSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[12.0.0]<br>OS_PATCH_LEVEL&nbsp;&nbsp;[2022-03]<br>PAGESIZE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4096]<br>CMDLINE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]<br>KERNEL_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[raw]<br>RAMDISK_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[lz4_legacy]<br>VBMETA";
+            } else if ( args[2] && args[2] == "ksu-10581-Image-android13-5.10.107_2022-05-boot.img" ) {
+                information += "Parsing boot image: [ksu-10581-Image-android13-5.10.107_2022-05-boot.img]<br>HEADER_VER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4]<br>KERNEL_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[43387204]<br>RAMDISK_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0]<br>PAGESIZE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4096]<br>CMDLINE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]<br>KERNEL_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[raw]<br>VBMETA";
+            } else if ( ! args[2] ) {
+                information += "magiskboot: Please choose file which you need to unpack.";
+            } else {
+                information += "magiskboot: No such file or directory.";
+            }
+        } else if ( ! args[1] || args[1] == "-h"  ) {
+            information += "MagiskBoot - Boot Image Modification Tool<br><br>Usage: ./magiskboot <action> [args...]<br><br>Supported actions:<br>&nbsp;&nbsp;unpack [file]<br>&nbsp;&nbsp;-h";
+        } else {
+            information += "magiskboot: No such option.";
+        }
+        return information;
+    }
+}
+
+/**
  * whoami
  **/
 customCommands.whoami = {
