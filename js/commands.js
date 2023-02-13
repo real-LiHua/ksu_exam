@@ -134,7 +134,9 @@ customCommands.fastboot = {
         var information = "";
         if (args[1] && args[1] == "flash") {
             if (args[2] && args[2] == "boot") {
-                var result = term.catFile(args[3]);
+                if (args[3]) {
+                    var result = term.catFile(args[3]);
+                }
                 if (args[3] && args[3] == "boot-official.img" && result != false) {
                     information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]";
                     information += "<br>Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]";
@@ -192,7 +194,9 @@ customCommands.magiskboot = {
     exe: function (args) {
         var information = "";
         if (args[1] && args[1] == "unpack") {
-            var result = term.catFile(args[2]);
+            if (args[2]) {
+                var result = term.catFile(args[2]);
+            }
             if (args[2] && args[2] == "boot-official.img" && result != false) {
                 information += "Parsing boot image: [boot-official.img]";
                 information += "<br>HEADER_VER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4]";
