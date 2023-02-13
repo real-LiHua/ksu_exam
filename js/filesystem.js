@@ -42,8 +42,8 @@ var originalFilesystem="<d name='/' path='/'>\
                         <c>\
                            <d name='workdir' path='/home/user/workdir/'>\
                                <c>\
-                                  <f name='boot-offical.img' path='/home/user/workdir/'>\
-                                      <contents>This is the offical boot.img.</contents>\
+                                  <f name='boot-official.img' path='/home/user/workdir/'>\
+                                      <contents>This is the official boot.img.</contents>\
                                   </f>\
                                   <f name='ksu-10581-Image-android12-5.10.81_2022-03-boot-gz.img' path='/home/user/workdir/'>\
                                       <contents>https://github.com/tiann/KernelSU/releases</contents>\

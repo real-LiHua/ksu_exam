@@ -108,7 +108,7 @@ customCommands.fastboot = {
         var information = "";
         if ( args[1] && args[1] == "flash" ) {
             if ( args[2] && args[2] == "boot" ) {
-                if ( args[3] && args[3] == "boot-offical.img" ) {
+                if ( args[3] && args[3] == "boot-official.img" ) {
                     information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]<br>Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]<br>Finished. Total time: 5.312s<br>Nothing happened.";
                 } else if ( args[3] && args[3] == "ksu-10581-Image-android12-5.10.81_2022-03-boot-gz.img" ) {
                     information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]<br>Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]<br>Finished. Total time: 5.312s<br>Congratulations!!You have successfully completed this exam.<br>Telegram Group Password:114514";
@@ -147,8 +147,8 @@ customCommands.magiskboot = {
     exe: function (args) {
         var information = "";
         if ( args[1] && args[1] == "unpack" ) {
-            if ( args[2] && args[2] == "boot-offical.img" ) {
-                information += "Parsing boot image: [boot-offical.img]<br>HEADER_VER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4]<br>KERNEL_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[15871933]<br>RAMDISK_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1380084]<br>OS_VERSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[12.0.0]<br>OS_PATCH_LEVEL&nbsp;&nbsp;[2022-03]<br>PAGESIZE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4096]<br>CMDLINE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]<br>KERNEL_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[gzip]<br>RAMDISK_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[lz4_legacy]<br>VBMETA";
+            if ( args[2] && args[2] == "boot-official.img" ) {
+                information += "Parsing boot image: [boot-official.img]<br>HEADER_VER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4]<br>KERNEL_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[15871933]<br>RAMDISK_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1380084]<br>OS_VERSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[12.0.0]<br>OS_PATCH_LEVEL&nbsp;&nbsp;[2022-03]<br>PAGESIZE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4096]<br>CMDLINE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]<br>KERNEL_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[gzip]<br>RAMDISK_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[lz4_legacy]<br>VBMETA";
             } else if ( args[2] && args[2] == "ksu-10581-Image-android12-5.10.81_2022-03-boot-gz.img" ) {
                 information += "Parsing boot image: [ksu-10581-Image-android12-5.10.81_2022-03-boot-gz.img]<br>HEADER_VER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4]<br>KERNEL_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[15871933]<br>RAMDISK_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1380084]<br>OS_VERSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[12.0.0]<br>OS_PATCH_LEVEL&nbsp;&nbsp;[2022-03]<br>PAGESIZE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4096]<br>CMDLINE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]<br>KERNEL_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[gzip]<br>RAMDISK_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[lz4_legacy]<br>VBMETA";
             } else if ( args[2] && args[2] == "ksu-10581-Image-android12-5.10.81_2022-03-boot-lz4.img" ) {
