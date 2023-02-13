@@ -39,7 +39,7 @@ builtInCommands.base64dec = {
  **/
 customCommands.cow = {
     about: "cow<br>&nbsp;&nbsp;What does a cow say?",     // Help text for this command.
-    exe: function() {                                     // Executed for this command.
+    exe: function () {                                     // Executed for this command.
         return "Moooooo!";
     }
 };
@@ -162,7 +162,7 @@ customCommands.fastboot = {
                 } else {
                     information += "fastboot: error: No such file or directory.";
                 }
-            } else if (! args[2]) {
+            } else if (!args[2]) {
                 information += "fastboot: flash: Please choose the partition which you need to flash.<br>(Just need to flash boot.)";
             } else {
                 information += "fastboot: flash: Needn't flash this partition.";
@@ -173,7 +173,7 @@ customCommands.fastboot = {
             information += "usage: fastboot [OPTION...] COMMAND...<br><br>&nbsp;flash PARTITION [FILENAME]<br>&nbsp;devices<br>&nbsp;-h";
         } else {
             information += "fastboot: usage: no command";
-        } 
+        }
         return information;
     }
 }
@@ -248,7 +248,7 @@ customCommands.magiskboot = {
             } else {
                 information += "magiskboot: No such file or directory.";
             }
-        } else if (! args[1] || args[1] == "-h") {
+        } else if (!args[1] || args[1] == "-h") {
             information += "MagiskBoot - Boot Image Modification Tool";
             information += "<br><br>Usage: ./magiskboot <action> [args...]";
             information += "<br><br>Supported actions:";
@@ -284,7 +284,7 @@ customCommands.whoami = {
             information += "<br>This is free software: you are free to change and redistribute it.";
             information += "<br>There is NO WARRANTY, to the extent permitted by law.";
             information += "<br><br>Written by Richard Mlynarik.";
-        } else if (! args[1]) {
+        } else if (!args[1]) {
             information += "root";
         } else {
             information += "whoami: No such options!"
