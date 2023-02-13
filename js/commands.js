@@ -165,7 +165,7 @@ customCommands.fastboot = {
                     information += "<br>Please continue to finish exam.";
                 } else if (!args[3]) {
                     information += "fastboot: flash: Please choose a file which you need to flash.";
-                } else if (result == false) {
+                } else {
                     information += "fastboot: error: No such file or directory.";
                 }
             } else if (!args[2]) {
