@@ -106,7 +106,7 @@ customCommands.uname = {
             information += "<br>This is free software: you are free to change and redistribute it.";
             information += "<br>There is NO WARRANTY, to the extent permitted by law.";
             information += "<br><br>Written by David MacKenzie.";
-        } else if (! args[1]) {
+        } else if (!args[1]) {
             information += "Linux";
         } else {
             information += "uname: No such option.";
@@ -157,7 +157,7 @@ customCommands.fastboot = {
                     information += "<br>Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]";
                     information += "<br>Finished. Total time: 5.312s<br>Congratulations!!Your device has become a brick!";
                     information += "<br>Please continue to finish exam.";
-                } else if (! args[3]) {
+                } else if (!args[3]) {
                     information += "fastboot: flash: Please choose a file which you need to flash.";
                 } else {
                     information += "fastboot: error: No such file or directory.";
@@ -243,7 +243,7 @@ customCommands.magiskboot = {
                 information += "<br>CMDLINE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[]";
                 information += "<br>KERNEL_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[raw]";
                 information += "<br>VBMETA";
-            } else if (! args[2]) {
+            } else if (!args[2]) {
                 information += "magiskboot: Please choose file which you need to unpack.";
             } else {
                 information += "magiskboot: No such file or directory.";
