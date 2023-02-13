@@ -134,6 +134,8 @@ customCommands.fastboot = {
         var information = "";
         if (args[1] && args[1] == "flash") {
             if (args[2] && args[2] == "boot") {
+                var result = term.catFile(args[3]);
+                if (result != false) {
                 if (args[3] && args[3] == "boot-official.img") {
                     information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]<br>";
                     information += "Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]<br>Finished. Total time: 5.312s<br>Nothing happened.";
@@ -159,9 +161,10 @@ customCommands.fastboot = {
                     information += "<br>Please continue to finish exam.";
                 } else if (!args[3]) {
                     information += "fastboot: flash: Please choose a file which you need to flash.";
-                } else {
-                    information += "fastboot: error: No such file or directory.";
                 }
+            } else {
+                information += "fastboot: error: No such file or directory.";
+            }
             } else if (!args[2]) {
                 information += "fastboot: flash: Please choose the partition which you need to flash.<br>(Just need to flash boot.)";
             } else {
