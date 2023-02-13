@@ -1,4 +1,4 @@
-var originalFilesystem="<d name='/' path='/'>\
+var originalFilesystem = "<d name='/' path='/'>\
             <c>\
             <d name='bin' path='/bin/'>\
                 <c>\
