@@ -111,7 +111,7 @@ customCommands.fastboot = {
                 if ( args[3] && args[3] == "boot-official.img" ) {
                     information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]<br>Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]<br>Finished. Total time: 5.312s<br>Nothing happened.";
                 } else if ( args[3] && args[3] == "ksu-10581-Image-android12-5.10.81_2022-03-boot-gz.img" ) {
-                    information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]<br>Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]<br>Finished. Total time: 5.312s<br>Congratulations!!You have successfully completed this exam.<br>Telegram Group Password:114514";
+                    information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]<br>Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]<br>Finished. Total time: 5.312s<br>Congratulations!!You have successfully completed this exam.<br>Telegram Group Password:2022kernelsu1209";
                 } else if ( args[3] && args[3] == "ksu-10581-Image-android12-5.10.81_2022-03-boot-lz4.img" ) {
                     information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]<br>Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]<br>Finished. Total time: 5.312s<br>Congratulations!!Your device has become a brick!<br>Please continue to finish exam.";
                 } else if ( args[3] && args[3] == "ksu-10581-Image-android12-5.10.81_2022-03-boot.img" ) {
