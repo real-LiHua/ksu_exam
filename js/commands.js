@@ -134,32 +134,38 @@ customCommands.fastboot = {
         var information = "";
         if (args[1] && args[1] == "flash") {
             if (args[2] && args[2] == "boot") {
-                if (args[3] && args[3] == "boot-official.img") {
-                    information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]<br>";
-                    information += "Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]<br>Finished. Total time: 5.312s<br>Nothing happened.";
-                } else if (args[3] && args[3] == "ksu-10581-Image-android12-5.10.81_2022-03-boot-gz.img") {
+                var result = term.catFile(args[3]);
+                if (args[3] && args[3] == "boot-official.img" && result != false) {
                     information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]";
                     information += "<br>Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]";
-                    information += "<br>Finished. Total time: 5.312s<br>Congratulations!!You have successfully completed this exam.";
+                    information += "<br>Finished. Total time: 5.312s<br>Nothing happened.";
+                } else if (args[3] && args[3] == "ksu-10581-Image-android12-5.10.81_2022-03-boot-gz.img" && result != false) {
+                    information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]";
+                    information += "<br>Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]";
+                    information += "<br>Finished. Total time: 5.312s";
+                    information += "<br>Congratulations!!You have successfully completed this exam.";
                     information += "<br>The Group Password:&nbsp;&nbsp;" + atob(getQueryVariable("pwd"));
-                } else if (args[3] && args[3] == "ksu-10581-Image-android12-5.10.81_2022-03-boot-lz4.img") {
+                } else if (args[3] && args[3] == "ksu-10581-Image-android12-5.10.81_2022-03-boot-lz4.img" && result != false) {
                     information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]";
                     information += "<br>Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]";
-                    information += "<br>Finished. Total time: 5.312s<br>Congratulations!!Your device has become a brick!";
+                    information += "<br>Finished. Total time: 5.312s";
+                    information += "<br>Congratulations!!Your device has become a brick!";
                     information += "<br>Please continue to finish exam.";
-                } else if (args[3] && args[3] == "ksu-10581-Image-android12-5.10.81_2022-03-boot.img") {
+                } else if (args[3] && args[3] == "ksu-10581-Image-android12-5.10.81_2022-03-boot.img" && result != false) {
                     information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]";
                     information += "<br>Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]";
-                    information += "<br>Finished. Total time: 5.312s<br>Congratulations!!Your device has become a brick!";
+                    information += "<br>Finished. Total time: 5.312s";
+                    information += "<br>Congratulations!!Your device has become a brick!";
                     information += "<br>Please continue to finish exam.";
-                } else if (args[3] && args[3] == "ksu-10581-Image-android13-5.10.107_2022-05-boot.img") {
+                } else if (args[3] && args[3] == "ksu-10581-Image-android13-5.10.107_2022-05-boot.img" && result != false) {
                     information += "Sending 'boot_a' (196608 KB)&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  4.848s]";
                     information += "<br>Writing 'boot_a'&nbsp;&nbsp;&nbsp;&nbsp;OKAY [  0.314s]";
-                    information += "<br>Finished. Total time: 5.312s<br>Congratulations!!Your device has become a brick!";
+                    information += "<br>Finished. Total time: 5.312s";
+                    information += "<br>Congratulations!!Your device has become a brick!";
                     information += "<br>Please continue to finish exam.";
                 } else if (!args[3]) {
                     information += "fastboot: flash: Please choose a file which you need to flash.";
-                } else {
+                } else if (result == false) {
                     information += "fastboot: error: No such file or directory.";
                 }
             } else if (!args[2]) {
@@ -186,7 +192,8 @@ customCommands.magiskboot = {
     exe: function (args) {
         var information = "";
         if (args[1] && args[1] == "unpack") {
-            if (args[2] && args[2] == "boot-official.img") {
+            var result = term.catFile(args[2]);
+            if (args[2] && args[2] == "boot-official.img" && result != false) {
                 information += "Parsing boot image: [boot-official.img]";
                 information += "<br>HEADER_VER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4]";
                 information += "<br>KERNEL_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[15871933]";
@@ -198,7 +205,7 @@ customCommands.magiskboot = {
                 information += "<br>KERNEL_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[gzip]";
                 information += "<br>RAMDISK_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[lz4_legacy]";
                 information += "<br>VBMETA";
-            } else if (args[2] && args[2] == "ksu-10581-Image-android12-5.10.81_2022-03-boot-gz.img") {
+            } else if (args[2] && args[2] == "ksu-10581-Image-android12-5.10.81_2022-03-boot-gz.img" && result != false) {
                 information += "Parsing boot image: [ksu-10581-Image-android12-5.10.81_2022-03-boot-gz.img]";
                 information += "<br>HEADER_VER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4]";
                 information += "<br>KERNEL_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[15871933]";
@@ -210,7 +217,7 @@ customCommands.magiskboot = {
                 information += "<br>KERNEL_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[gzip]";
                 information += "<br>RAMDISK_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[lz4_legacy]";
                 information += "<br>VBMETA";
-            } else if (args[2] && args[2] == "ksu-10581-Image-android12-5.10.81_2022-03-boot-lz4.img") {
+            } else if (args[2] && args[2] == "ksu-10581-Image-android12-5.10.81_2022-03-boot-lz4.img" && result != false) {
                 information += "Parsing boot image: [ksu-10581-Image-android12-5.10.81_2022-03-boot-lz4.img]";
                 information += "<br>HEADER_VER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4]";
                 information += "<br>KERNEL_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[18141752]";
@@ -222,7 +229,7 @@ customCommands.magiskboot = {
                 information += "<br>KERNEL_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[lz4_lg]";
                 information += "<br>RAMDISK_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[lz4_legacy]";
                 information += "<br>VBMETA";
-            } else if (args[2] && args[2] == "ksu-10581-Image-android12-5.10.81_2022-03-boot.img") {
+            } else if (args[2] && args[2] == "ksu-10581-Image-android12-5.10.81_2022-03-boot.img" && result != false) {
                 information += "Parsing boot image: [ksu-10581-Image-android12-5.10.81_2022-03-boot.img]";
                 information += "<br>HEADER_VER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4]";
                 information += "<br>KERNEL_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[37331556]";
@@ -234,7 +241,7 @@ customCommands.magiskboot = {
                 information += "<br>KERNEL_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[raw]";
                 information += "<br>RAMDISK_FMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[lz4_legacy]";
                 information += "<br>VBMETA";
-            } else if (args[2] && args[2] == "ksu-10581-Image-android13-5.10.107_2022-05-boot.img") {
+            } else if (args[2] && args[2] == "ksu-10581-Image-android13-5.10.107_2022-05-boot.img" && result != false) {
                 information += "Parsing boot image: [ksu-10581-Image-android13-5.10.107_2022-05-boot.img]";
                 information += "<br>HEADER_VER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4]";
                 information += "<br>KERNEL_SZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[43387204]";
