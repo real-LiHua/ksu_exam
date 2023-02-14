@@ -132,6 +132,7 @@ customCommands.fastboot = {
     about: "usage: fastboot [OPTION...] COMMAND...",
     exe: function (args) {
         var information = "";
+        var result = "";
         if (args[1] && args[1] == "flash") {
             if (args[2] && args[2] == "boot") {
                 if (args[3]) {
@@ -193,6 +194,7 @@ customCommands.magiskboot = {
     about: "usage: magiskboot [action] [args...]",
     exe: function (args) {
         var information = "";
+        var result = "";
         if (args[1] && args[1] == "unpack") {
             if (args[2]) {
                 var result = term.catFile(args[2]);
