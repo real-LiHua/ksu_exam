@@ -189,6 +189,7 @@ customCommands.fastboot = {
                         information += "<br>Finished. Total time: 5.312s";
                         information += "<br>Congratulations!!Your device has become a brick!";
                         information += "<br>Please continue to finish exam.";
+                        information += "<br>Page will reload in 3 seconds.";
                     } else if (!args[3]) {
                         information += "fastboot: flash: Please choose a file which you need to flash.";
                     } else {

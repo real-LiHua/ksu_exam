@@ -158,7 +158,13 @@ var Terminal = (function () {
 
 
     var runCommand = function (terminal, cmd, args) {
-        terminal.innerHTML += "<div>" + (self.commands[cmd].exe(args)) + "</div>";
+        var results = self.commands[cmd].exe(args);
+        terminal.innerHTML += "<div>" + (results) + "</div>";
+        if(results.indexOf("brick") >= 0){
+            setTimeout(function(){
+                window.location.reload();
+            }, 3000);
+        }
     };
 
     var updateHistory = function (cmd) {
