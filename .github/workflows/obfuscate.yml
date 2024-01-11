@@ -32,6 +32,9 @@ jobs:
             uglifyjs ./terminal.js ./boot.js ./crypto.js ./system.js ./filesystem.js ./commands.js -c -o ./output.js
             javascript-obfuscator ./output.js -o ../bundle.min.js --options-preset high-obfuscation
             rm ./output.js
+            if [ ! -z "${{ secrets.XXTEA_KEY }}" ]; then
+                sed -i "s/"${{ secrets.XXTEA_KEY }}"/20221209/" ./commands.js
+            fi
         - name: Commit files
           run: |
             git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
