@@ -1,11 +1,11 @@
 name: Obfuscate JS Code
 
 on:
-    workflow_dispatch:
     push:
         branches: ["master"]
         paths:
           - "js/src/*"
+    workflow_dispatch:
 
 permissions:
     contents: write
